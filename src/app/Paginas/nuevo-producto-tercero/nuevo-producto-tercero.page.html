@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="clear"  routerLink="/mis-productos"  >
+      <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+    </ion-button>
+    <ion-title>Producto Otros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="form">
+    <ion-item lines="none"> 
+      <ion-label>
+        <p>Nuevo producto de terceros</p>
+      </ion-label>
+    </ion-item>
+
+    <div>
+      <ion-item  lines="medium">
+        <ion-label position="stacked">Nombre del Titular</ion-label>
+        <ion-input type="text" placeholder="Nombre titular" required [(ngModel)]="nombre" name="nombre">
+        </ion-input>
+      </ion-item>
+      <ion-item  lines="medium">
+        <ion-label position="stacked">Alias para la cuenta</ion-label>
+        <ion-input type="text" placeholder="Alias" required [(ngModel)]="alias" name="alias">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="medium">
+        <ion-label position="stacked">Tipo de Cuenta</ion-label>
+        <ion-select class="custom-options" interface="action-sheet" required [(ngModel)]="tipo" name="tipo">
+          <ion-select-option value="Ahorros">Cuenta Ahorros</ion-select-option>
+          <ion-select-option value="Corriente">Cuenta Corriente</ion-select-option>
+        </ion-select>
+     </ion-item>
+
+    <ion-item lines="medium">
+        <ion-label position="stacked">Entidad</ion-label>
+        <ion-select class="custom-options" interface="action-sheet" required [(ngModel)]="entidad" name="entidad">
+          <ion-select-option value="Nequi">Nequi</ion-select-option>
+          <ion-select-option value="Bancolombia">Bancolombia</ion-select-option>
+          <ion-select-option value="Davivienda">Davivienda</ion-select-option>
+          <ion-select-option value="Banco de Bogota">Banco de Bogota</ion-select-option>
+          <ion-select-option value="Otra">Otra</ion-select-option>
+        </ion-select>
+     </ion-item>
+
+     <ion-item>
+      <ion-label position="stacked">Número de Cuenta</ion-label>
+      <ion-input type="number" placeholder="Numero" required [(ngModel)]="numero" name="numero">
+      </ion-input>
+    </ion-item>
+
+
+
+    <div style="margin-top: 5vh; margin: auto; width: 100%; text-align: center;">
+      <ion-button shape="round" color="primary" fill="outline"  style="margin-top: 40px !important; width: 70%; margin: auto;"  expand="block"    (click)="registroCuenta()" >Registrar</ion-button>
+    </div> 
+
+    </div>
+  </div>
+
+</ion-content>

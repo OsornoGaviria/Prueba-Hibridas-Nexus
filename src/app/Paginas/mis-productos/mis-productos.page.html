@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="clear" routerLink="/dash" >
+      <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+  </ion-button>
+  <ion-button slot="end" fill="clear" routerLink="/nuevo-producto-propio">
+    <ion-icon name="add" color="light"></ion-icon>
+</ion-button>
+    <ion-title>Mis Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <div *ngIf="x!=0" class="not-found">
+     
+
+      <ion-item *ngFor="let cuenta of misProductos" (click)="verDetalles(cuenta.idCuenta)">
+        <ion-icon slot="start" name="chevron-forward-outline"></ion-icon>
+        <ion-label>
+            <h2><b>{{cuenta.entidadFinanciera}}</b></h2>
+            <p>Cuenta {{cuenta.tipoCuenta}} | n°{{cuenta.numeroCuenta}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div class="not-found" *ngIf="x==0" >
+      <div style="margin-top:20%">
+        <img src="../../../assets/icon/sinreusltados.png" width="50%">
+        <p>Incribe tus cuentas<br> desde <strong routerLink="/nuevo-producto-propio">aqui</strong></p>
+      </div>
+  </div>
+</ion-content>

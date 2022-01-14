@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="clear"  routerLink="/tranferencias"  >
+      <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+    </ion-button>
+    <ion-title>Tranferencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <ion-item lines="none"> 
+      <ion-label>
+        <p>Tranferencia a cuentas de terceros</p>
+      </ion-label>
+    </ion-item>
+
+    <div>
+      <ion-item lines="medium">
+        <ion-label position="stacked">Peroducto Origen</ion-label>
+        <ion-select class="custom-options" interface="action-sheet" required [(ngModel)]="origen" name="origen">
+          <ion-select-option *ngFor="let cuenta of cuentas" value={{cuenta.idCuenta}} >{{cuenta.entidadFinanciera}} | {{cuenta.numeroCuenta}}</ion-select-option>
+        
+        </ion-select>
+     </ion-item>
+
+    <ion-item lines="medium">
+        <ion-label position="stacked">Producto Destino</ion-label>
+        <ion-select class="custom-options" interface="action-sheet" required [(ngModel)]="destino" name="destino">
+            <ion-select-option *ngFor="let cuenta of cuentaso" value={{cuenta.idCuenta}} >{{cuenta.aliasCuenta}} | {{cuenta.numeroCuenta}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Valor a Tranferir</ion-label>
+      <ion-input type="number" placeholder="$" required [(ngModel)]="valor" name="valor">
+      </ion-input>
+    </ion-item>
+
+    <div style="margin-top: 5vh; margin: auto; width: 100%; text-align: center;">
+      <ion-button shape="round" color="primary" fill="outline"  style="margin-top: 40px !important; width: 70%; margin: auto;"  expand="block"    (click)="registroCuenta()" >Tranferir</ion-button>
+    </div> 
+
+    </div>
+  </div>
+
+</ion-content>

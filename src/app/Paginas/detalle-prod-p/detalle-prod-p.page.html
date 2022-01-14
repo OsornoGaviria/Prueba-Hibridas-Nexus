@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="clear" routerLink="/mis-productos" >
+      <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+    </ion-button>
+    <ion-title>Detalles Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="info">
+    <div class="detalles">
+      <ion-item lines="none">
+        <ion-label>
+            <b><p>Detalles Cuenta</p></b>
+        </ion-label>
+      </ion-item>
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                <ion-item>
+                    <ion-label>
+                        <h3>Número</h3>
+                        <p>{{numero}}</p>
+                    </ion-label>
+
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                    <ion-label>
+                        <h3>Tipo</h3>
+                        <p>{{tipoCuenta}}</p>
+                    </ion-label>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                  <ion-label>
+                      <h3>Entidad</h3>
+                      <p>{{entidad}}</p>
+                  </ion-label>
+
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label>
+                      <h3>Saldo</h3>
+                      <p>${{saldoCuenta| number}} </p>
+                  </ion-label>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none">
+                <ion-label>
+                    <h3>Estado</h3>
+                    <p *ngIf="estadoCuenta==1">Activa</p>
+                    <p *ngIf="estadoCuenta==2">Inactiva</p>
+                </ion-label>
+
+            </ion-item>
+          </ion-col>
+          
+      </ion-row>
+      </ion-grid>
+    </div>
+    <div class="divider"></div>
+    <div class="detalles" *ngIf="movimientos">
+      <ion-item lines="none">
+        <ion-label>
+            <b><p>Movimientos</p></b>
+        </ion-label>
+      </ion-item>
+      <ion-grid style="text-align: center;">
+          <ion-row>
+              <ion-col>
+                <ion-label>
+                  <b><p>Fecha</p></b>
+              </ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-label>
+                  <b><p>Pruducto</p></b>
+              </ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-label>
+                  <b><p>Valor</p></b>
+              </ion-label>
+              </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let movi of movimientos">
+            <ion-col>
+              <ion-label>
+               <p>{{movi.fecha.toDate() | date:"shortDate" }}</p>
+            </ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-label>
+                <p *ngIf="movi.tipo==2">{{movi.cuenta}}</p>
+                <p *ngIf="movi.tipo==1">{{movi.cuenta}}</p>
+            </ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-label>
+                <p *ngIf="movi.tipo==2" style="color: green;"> +${{movi.valor | number}}</p>
+                <p *ngIf="movi.tipo==1" style="color: red;">-${{movi.valor | number}}</p>
+            </ion-label>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      </div>
+  </div>
+
+</ion-content>

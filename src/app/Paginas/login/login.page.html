@@ -1,0 +1,29 @@
+<ion-content padding>
+  <div class="div"> 
+    <div style="text-align: center;">
+      <img style="margin-top: 25% ;" src="../../../assets/icon/logo-login1.svg" width="45%">
+    </div>
+
+   <div style="margin-top: 10px;">
+    <ion-item>
+      <ion-icon  color="dark"  name="mail-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Correo" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+  <ion-item>
+  <ion-icon color="dark" name="key-outline" slot="start"></ion-icon>
+    <ion-input type="password"  placeholder="Contraseña" [(ngModel)]="password" name="password"></ion-input>
+  </ion-item>  
+  </div>
+  
+  <div style="margin-top: 70px; margin: auto; width: 100%; text-align: center;">
+
+    <ion-button shape="round" fill="outline" color="primary" style="margin-top: 40px !important; width: 70%; margin: auto;"  expand="block"    (click)="ClickLogin()" >INGRESAR</ion-button>
+  
+  
+
+  </div> 
+ 
+ <br><br>
+  </div>
+
+</ion-content>

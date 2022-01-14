@@ -1,0 +1,41 @@
+<app-menu ></app-menu>
+
+<ion-content>
+  <div class="container">
+    <ion-item lines="none">
+      <ion-label> 
+          <h3 style="font-size: 24px;"><b>¿Que quieres hacer hoy?</b></h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-grid>
+
+      <ion-row style="text-align: center;">
+        <!-- <ion-col size="4">
+            <img src="../../../assets/icon/icon-recargas-pro.svg" width="48px">
+            <p class="ion-p">Mis Finanzas</p>
+        </ion-col> -->
+       
+        <ion-col size="4" (click)="onProductos()">
+          <img src="../../../assets/icon/propiso.png" width="48px">
+          <p class="ion-p">Ver Mis Productos</p>
+        </ion-col>
+        <ion-col size="4" (click)="onProductosTerceros()">
+          <img src="../../../assets/icon/otros.png" width="48px">
+          <p class="ion-p">Productos de Terceros</p>
+         </ion-col>
+        <ion-col size="4" (click)="onTranferencias()" >
+          <img src="../../../assets/icon/tranferir.png" width="48px">
+          <p class="ion-p">Trasnferir Dinero </p>
+        </ion-col>
+        <ion-col size="4" (click)="CerrarSesion()">
+          <img src="../../../assets/icon/salir.png" width="48px">
+          <p class="ion-p">Cerrar Sesion  </p>
+        </ion-col>
+      
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>

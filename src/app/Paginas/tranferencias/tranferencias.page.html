@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tranferencias</ion-title>
+    <ion-button slot="start" fill="clear" routerLink="/dash" >
+      <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+  </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+      <ion-item (click)="onCp()">
+        <ion-icon name="chevron-forward-outline" slot="start"></ion-icon>
+          <ion-label>
+              <p>A Cuentas Propias</p>
+          </ion-label>
+      </ion-item>
+      <ion-item (click)="onCt()">
+        <ion-icon name="chevron-forward-outline" slot="start"></ion-icon>
+        <ion-label>
+            <p>A Cuentas de Terceros</p>
+        </ion-label>
+    </ion-item>
+  </div>
+
+
+</ion-content>
